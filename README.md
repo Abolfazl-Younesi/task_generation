@@ -28,6 +28,7 @@ This project provides several Python scripts for generating random periods and t
         - `num_periods`: The number of periods in a period set.
         - `num_sets`: Number of sets to generate.
         - `available_periods`: A list of available periods.
+    - Tags: random periods, discrete distribution
 
 2. `generate_random_periods_loguniform.py`:
     - Description: Generates a list of num_sets sets containing num_periods random periods using a loguniform distribution.
@@ -37,6 +38,7 @@ This project provides several Python scripts for generating random periods and t
         - `min_period`: Minimum period value.
         - `max_period`: Maximum period value.
         - `round_to_int`: Whether to round the generated periods to integers.
+    - Tags: random periods, loguniform distribution
 
 3. `generate_random_periods_uniform.py`:
     - Description: Generates a list of num_sets sets containing num_periods random periods using a uniform distribution.
@@ -46,6 +48,7 @@ This project provides several Python scripts for generating random periods and t
         - `min_period`: Minimum period value.
         - `max_period`: Maximum period value.
         - `round_to_int`: Whether to round the generated periods to integers.
+    - Tags: random periods, uniform distribution
 
 4. `ripoll_taskset_generation.py`:
     - Description: Generates task sets with specific properties such as computation time, slack time, delay, and target utilization.
@@ -57,12 +60,41 @@ This project provides several Python scripts for generating random periods and t
         - `target_utilization`: Total utilization to reach.
     - Returns:
         - `task_sets`: List of task sets generated.
+    - Tags: task sets, computation time, slack time, delay, target utilization
 
 5. `taskset_generation.py`:
     - Description: Generates task sets based on provided task utilization and period sets.
     - Args:
         - `utilizations`: The list of task utilization sets.
         - `periods`: The list of task period sets.
+        - `filename`: The name of the CSV file to save the results in.
+    - Returns:
+        - For the provided example, it returns:
+           
+
+            ```
+            [[(3.0, 20), (20.0, 50), (8.0, 13), (10.0, 80), (8.0, 23)],
+             [(10.0, 110), (123.0,320), (14.0, 80), (50.0,150), (5.0, 10)]]
+            ```
+    - Tags: task sets, task utilization, period sets
+
+6. `uunifast.py`:
+    - Description: Implements the UUniFast and UUniFast-Discard algorithms for generating task utilizations on uniprocessor and multiprocessor architectures.
+    - Args:
+        - `n`: The number of tasks in a task set.
+        - `u`: Total utilization of the task set.
+        - `nsets`: Number of sets to generate.
+        - `filename`: Name of the CSV file to save the results.
+    - Returns `nsets` of `n` task utilizations.
+    - Tags: task utilizations, UUniFast, UUniFast-Discard
+
+## Contributing
+
+Contributions to this project are welcome. If you find any issues or have suggestions for improvements, please open an issue or submit a pull request on the project's GitHub repository.
+
+## License
+
+This project is licensed under the [MIT License](LICENSE).
         - `filename`: The name of the CSV file to save the results in.
     - Returns:
         - For the provided example, it returns:
@@ -88,3 +120,4 @@ Contributions to this project are welcome. If you find any issues or have sugges
 ## License
 
 This project is licensed under the [MIT License](LICENSE).
+
